@@ -1,44 +1,54 @@
 (() => {
   const nav = document.getElementById("nav");
-  const navToggle = document.getElementById("navToggle");
-  const navMobile = document.getElementById("navMobile");
+  const menu = document.getElementById("navMenu");
+  const movil = document.getElementById("navMovil");
+  const oscuro = document.querySelector("[data-tema='oscuro']");
 
-  const onScroll = () => {
-    nav.classList.toggle("is-scrolled", window.scrollY > 40);
+  // La barra toma fondo al bajar y cambia a oscura cuando pasa sobre la zona negra.
+  const alDesplazar = () => {
+    nav.classList.toggle("con-fondo", window.scrollY > 24);
+    if (oscuro) {
+      const { top, bottom } = oscuro.getBoundingClientRect();
+      nav.classList.toggle("es-oscuro", top <= 42 && bottom >= 42);
+    }
   };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  alDesplazar();
+  window.addEventListener("scroll", alDesplazar, { passive: true });
+  window.addEventListener("resize", alDesplazar, { passive: true });
 
-  navToggle.addEventListener("click", () => {
-    const isOpen = navMobile.classList.toggle("is-open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
+  const cerrarMenu = () => {
+    movil.classList.remove("abierto");
+    menu.setAttribute("aria-expanded", "false");
+    menu.setAttribute("aria-label", "Abrir menú");
+  };
+  menu.addEventListener("click", () => {
+    const abierto = movil.classList.toggle("abierto");
+    menu.setAttribute("aria-expanded", String(abierto));
+    menu.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
+  });
+  movil.querySelectorAll("a").forEach((enlace) => enlace.addEventListener("click", cerrarMenu));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") cerrarMenu();
   });
 
-  navMobile.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navMobile.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
-    });
-  });
-
-  const revealTargets = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window && revealTargets.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
+  const porRevelar = document.querySelectorAll(".revela");
+  if ("IntersectionObserver" in window) {
+    const observador = new IntersectionObserver(
+      (entradas) => {
+        entradas.forEach((entrada) => {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add("visible");
+            observador.unobserve(entrada.target);
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
     );
-    revealTargets.forEach((el) => observer.observe(el));
+    porRevelar.forEach((el) => observador.observe(el));
   } else {
-    revealTargets.forEach((el) => el.classList.add("is-visible"));
+    porRevelar.forEach((el) => el.classList.add("visible"));
   }
 
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  const anio = document.getElementById("anio");
+  if (anio) anio.textContent = new Date().getFullYear();
 })();

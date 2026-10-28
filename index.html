@@ -3,190 +3,538 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>OptiLabs — Automatización e IA para negocios</title>
-<meta name="description" content="En OptiLabs implementamos Inteligencia Artificial y automatización para ayudarte a ahorrar tiempo, optimizar recursos y mejorar tus procesos. No esperes a que tu competencia avance para empezar." />
+<title>OptiLabs — El sistema que pone tu negocio en orden</title>
+<meta name="description" content="Caja, inventario, factura electrónica, fiados, clientes y un asistente que responde tu WhatsApp, en una sola plataforma para negocios en Colombia." />
+<meta name="theme-color" content="#F2F3F1" />
+<meta property="og:title" content="OptiLabs — El sistema que pone tu negocio en orden" />
+<meta property="og:description" content="Caja, inventario, factura electrónica, fiados, clientes y un asistente que responde tu WhatsApp, en una sola plataforma." />
+<meta property="og:image" content="https://optilabs.com.co/Logo-OptiLabs.jpg" />
 <link rel="icon" type="image/jpeg" href="Logo-OptiLabs.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
-<div class="noise" aria-hidden="true"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-alerta" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-sube" viewBox="0 0 24 24"><path d="M22 7 13.5 15.5l-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+  <symbol id="i-recibo" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></symbol>
+  <symbol id="i-caja" viewBox="0 0 24 24"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
+  <symbol id="i-documento" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></symbol>
+  <symbol id="i-billetera" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+  <symbol id="i-personas" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-mensaje" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-tienda" viewBox="0 0 24 24"><path d="M3 9h18l-1.5-5h-15Z"/><path d="M5 9v11h14V9"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-porcentaje" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+  <symbol id="i-reloj" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-barras" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol>
+  <symbol id="i-buscar" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-mas" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+  <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+  <symbol id="i-chispa" viewBox="0 0 32 32"><path d="M16 3c0 6-3 10-13 13 10 3 13 7 13 13 0-6 3-10 13-13-10-3-13-7-13-13z"/></symbol>
+</svg>
 
 <header class="nav" id="nav">
-  <div class="nav__inner">
-    <a href="#top" class="nav__brand">
-      <img src="Logo-OptiLabs.jpg" alt="" class="nav__logo" />
+  <div class="nav__barra">
+    <a href="#inicio" class="nav__marca">
+      <img src="Logo-OptiLabs.jpg" alt="" width="30" height="30" />
       <span>OptiLabs</span>
     </a>
 
-    <nav class="nav__links" aria-label="Navegación principal">
-      <a href="#servicios">Servicios</a>
-      <a href="#beneficios">Beneficios</a>
-      <a href="#proceso">Proceso</a>
-      <a href="#contacto">Contacto</a>
+    <nav class="nav__enlaces" aria-label="Principal">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#precio">Precio</a>
+      <a href="#preguntas">Preguntas</a>
     </nav>
 
-    <a href="https://wa.me/573022987677?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20automatizaci%C3%B3n%20con%20IA.%20Me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." class="nav__cta" target="_blank" rel="noopener">Agenda una llamada</a>
-
-    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMobile">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav__acciones">
+      <a href="https://optilabs-plataforma.vercel.app/login" class="nav__entrar">Entrar</a>
+      <a href="https://wa.me/573022987677?text=Hola%2C%20quiero%20agendar%20una%20demo%20de%20OptiLabs%20para%20mi%20negocio." class="boton boton--blanco boton--chico" target="_blank" rel="noopener">Agenda una demo</a>
+      <button class="nav__menu" id="navMenu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMovil">
+        <span></span><span></span>
+      </button>
+    </div>
   </div>
 
-  <div class="nav__mobile" id="navMobile">
-    <a href="#servicios">Servicios</a>
-    <a href="#beneficios">Beneficios</a>
-    <a href="#proceso">Proceso</a>
-    <a href="#contacto">Contacto</a>
-    <a href="https://wa.me/573022987677?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20automatizaci%C3%B3n%20con%20IA.%20Me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." class="nav__cta" target="_blank" rel="noopener">Agenda una llamada</a>
-  </div>
+  <nav class="nav__movil" id="navMovil" aria-label="Menú">
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#modulos">Módulos</a>
+    <a href="#precio">Precio</a>
+    <a href="#preguntas">Preguntas</a>
+    <a href="https://optilabs-plataforma.vercel.app/login">Entrar a mi cuenta</a>
+    <a href="https://wa.me/573022987677?text=Hola%2C%20quiero%20agendar%20una%20demo%20de%20OptiLabs%20para%20mi%20negocio." class="boton boton--petroleo nav__movil-boton" target="_blank" rel="noopener">Agenda una demo</a>
+  </nav>
 </header>
 
-<main id="top">
+<main id="inicio">
 
+  <!-- ===== Portada ===== -->
   <section class="hero">
-    <div class="hero__content">
-      <img src="FotoPortada-sin-fondo-trim.png" alt="OptiLabs — Automatizaciones con IA. Más eficiencia, menos esfuerzo, mayores resultados." class="hero__mark" />
-      <h1 class="hero__title">El futuro de los<br />negocios ya comenzó.</h1>
-      <p class="hero__sub">En OptiLabs implementamos Inteligencia Artificial y automatización para ayudarte a ahorrar tiempo, optimizar recursos y mejorar tus procesos. No esperes a que tu competencia avance para empezar.</p>
-
-      <div class="hero__actions">
-        <a href="https://wa.me/573022987677?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20automatizaci%C3%B3n%20con%20IA.%20Me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." class="btn btn--primary" target="_blank" rel="noopener">
-          <span>Habla con nosotros</span>
-        </a>
-        <a href="mailto:optilabs.col@gmail.com" class="btn btn--ghost">
-          <span>Escríbenos</span>
-        </a>
+    <div class="contenedor hero__texto">
+      <p class="etiqueta entra" style="--i:0"><span class="etiqueta__punto"></span>Automatización e IA para negocios<span class="solo-ancho"> en Colombia</span></p>
+      <h1 class="titulo entra" style="--i:1">El sistema que pone<br /> tu negocio <em>en orden</em></h1>
+      <p class="hero__bajada entra" style="--i:2">Caja, inventario, factura electrónica, fiados, clientes y un asistente que responde tu WhatsApp. Enciendes solo lo que tu negocio necesita.</p>
+      <div class="hero__acciones entra" style="--i:3">
+        <a href="https://wa.me/573022987677?text=Hola%2C%20quiero%20agendar%20una%20demo%20de%20OptiLabs%20para%20mi%20negocio." class="boton boton--negro" target="_blank" rel="noopener">Agenda una demo</a>
+        <a href="https://optilabs-plataforma.vercel.app/login" class="boton boton--blanco">Entrar a mi cuenta</a>
       </div>
+      <p class="hero__nota entra" style="--i:4">14 días de prueba · Sin instalar nada</p>
     </div>
 
-    <a href="#servicios" class="hero__scroll" aria-label="Ir a servicios">
-      <span class="hero__scroll-line"></span>
-    </a>
+    <div class="contenedor">
+      <div class="vitrina hero__vitrina entra" style="--i:5">
+        <div class="app" role="img" aria-label="Pantalla de Caja de OptiLabs: un jean y dos camisetas para Laura Gómez, pagados con Nequi por $149.700.">
+          <div class="app__barra"><span></span><span></span><span></span><p>tienda-demo · OptiLabs</p></div>
+          <div class="app__cuerpo">
+            <div class="app__menu">
+              <p class="app__marca"><i></i>Tienda Demo</p>
+              <ul>
+                <li>Inicio</li>
+                <li class="activo">Caja</li>
+                <li>Ventas</li>
+                <li>Productos</li>
+                <li>Inventario</li>
+                <li>Clientes</li>
+                <li>Cartera</li>
+                <li>Reportes</li>
+                <li>WhatsApp</li>
+              </ul>
+            </div>
+
+            <div class="caja">
+              <div class="caja__cabeza">
+                <p class="app__titulo">Caja</p>
+                <p class="app__tenue">Turno abierto · Ana · desde 8:02 a. m.</p>
+              </div>
+              <div class="caja__buscar"><svg class="ico"><use href="#i-buscar"/></svg>Buscar por nombre o escanear código (SKU)</div>
+              <div class="caja__productos">
+                <div class="producto producto--agregado"><p class="producto__nombre">Jean clásico</p><p class="producto__sku">JEA-010</p><p class="producto__pie"><b>$89.900</b><span class="bajo">Quedan 4</span></p></div>
+                <div class="producto producto--agregado"><p class="producto__nombre">Camiseta básica</p><p class="producto__sku">CAM-002</p><p class="producto__pie"><b>$29.900</b><span>38</span></p></div>
+                <div class="producto"><p class="producto__nombre">Chaqueta denim</p><p class="producto__sku">CHA-104</p><p class="producto__pie"><b>$159.900</b><span>7</span></p></div>
+                <div class="producto"><p class="producto__nombre">Gorra bordada</p><p class="producto__sku">GOR-031</p><p class="producto__pie"><b>$39.900</b><span>15</span></p></div>
+                <div class="producto"><p class="producto__nombre">Medias x3</p><p class="producto__sku">MED-300</p><p class="producto__pie"><b>$19.900</b><span>52</span></p></div>
+                <div class="producto"><p class="producto__nombre">Correa de cuero</p><p class="producto__sku">COR-018</p><p class="producto__pie"><b>$49.900</b><span>11</span></p></div>
+              </div>
+            </div>
+
+            <div class="ticket">
+              <p class="app__titulo">Venta</p>
+              <div class="ticket__lineas">
+                <p><span>Jean clásico<small>1 × $89.900</small></span><b>$89.900</b></p>
+                <p><span>Camiseta básica<small>2 × $29.900</small></span><b>$59.800</b></p>
+              </div>
+              <div class="ticket__campo"><small>Cliente</small><p>Laura Gómez</p></div>
+              <div>
+                <small class="app__tenue">Medio de pago</small>
+                <div class="ticket__medios"><span>Efectivo</span><span class="activo">Nequi</span><span>Tarjeta</span><span>Fiado</span></div>
+              </div>
+              <div class="ticket__total">
+                <p><span>IVA incluido</span><span>$23.902</span></p>
+                <p class="ticket__suma"><span>Total</span><b>$149.700</b></p>
+              </div>
+              <p class="ticket__cobrar">Cobrar $149.700</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="chip" style="left:-3%;top:16%;--d:0s"><span class="chip__ico chip__ico--exito"><svg class="ico"><use href="#i-check"/></svg></span>Venta #1042 registrada</p>
+        <p class="chip" style="right:-4%;top:44%;--d:-2s"><span class="chip__ico chip__ico--petroleo"><svg class="ico"><use href="#i-documento"/></svg></span>Factura electrónica enviada</p>
+        <p class="chip" style="left:6%;bottom:-4%;--d:-4s"><span class="chip__ico chip__ico--alerta"><svg class="ico"><use href="#i-alerta"/></svg></span>Jean clásico está bajo el mínimo</p>
+      </div>
+    </div>
   </section>
 
-  <div class="rail-wrap reveal" id="railWrap">
-    <div class="rail" aria-hidden="true"></div>
+  <!-- ===== Rubros ===== -->
+  <section class="rubros" aria-labelledby="rubros-titulo">
+    <p class="rubros__titulo" id="rubros-titulo">Hecho para negocios como el tuyo</p>
+    <div class="marquesina">
+      <div class="marquesina__pista">
+        <ul class="marquesina__grupo">
+          <li>Ferreterías</li><li>Laboratorios naturistas</li><li>Consultorios</li><li>Clínicas odontológicas</li><li>Tiendas de ropa</li><li>Droguerías</li><li>Papelerías</li><li>Distribuidoras</li>
+        </ul>
+        <ul class="marquesina__grupo" aria-hidden="true">
+          <li>Ferreterías</li><li>Laboratorios naturistas</li><li>Consultorios</li><li>Clínicas odontológicas</li><li>Tiendas de ropa</li><li>Droguerías</li><li>Papelerías</li><li>Distribuidoras</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <section class="section" id="servicios">
-      <p class="eyebrow rail-mark">Qué hacemos</p>
-      <h2 class="section__title">Automatizamos lo que<br />te quita tiempo.</h2>
+  <!-- ===== Sistema ===== -->
+  <section class="bloque">
+    <div class="contenedor">
+      <div class="bloque__cabeza revela">
+        <p class="etiqueta">Sistema</p>
+        <h2 class="titulo titulo--2">No necesitas saber<br /> de <em>sistemas</em></h2>
+        <p class="bloque__bajada">Tú vendes y OptiLabs hace el resto: descuenta el inventario, emite la factura, calcula las comisiones y mueve al cliente en tu embudo. Tú solo revisas los números.</p>
+      </div>
 
-      <div class="cards">
-        <article class="card reveal">
-          <svg class="card__spark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c0 6-3 10-13 13 10 3 13 7 13 13 0-6 3-10 13-13-10-3-13-7-13-13z"/></svg>
-          <h3>Automatización de procesos</h3>
-          <p>Conectamos tus herramientas para que las tareas repetitivas se hagan solas, sin que nadie tenga que recordarlas.</p>
-        </article>
+      <div class="vitrina bloque__vitrina revela">
+        <div class="app" role="img" aria-label="Pantalla de Reportes de OptiLabs: ventas netas de $18.452.300 este mes, 18 % más que el mes anterior.">
+          <div class="app__barra"><span></span><span></span><span></span><p>tienda-demo · Reportes</p></div>
+          <div class="reporte">
+            <div class="reporte__cabeza">
+              <p class="app__titulo">Reportes</p>
+              <div class="reporte__periodos"><span>Hoy</span><span>7 días</span><span>30 días</span><span class="activo">Este mes</span><span>Mes anterior</span></div>
+            </div>
+            <div class="reporte__cifras">
+              <div><small>Ventas netas</small><b>$18.452.300</b><span class="sube">+18 %</span></div>
+              <div><small>Número de ventas</small><b>214</b><span class="sube">+9 %</span></div>
+              <div><small>Ticket promedio</small><b>$86.226</b><span class="sube">+8 %</span></div>
+              <div><small>Clientes</small><b>131</b><span class="sube">+12 %</span></div>
+            </div>
+            <div class="reporte__fila">
+              <div class="reporte__grafica">
+                <small>Ventas por día</small>
+                <div class="barras">
+                  <i style="--h:38%"></i><i style="--h:52%"></i><i style="--h:44%"></i><i style="--h:61%"></i><i style="--h:70%"></i><i style="--h:88%"></i><i style="--h:30%"></i>
+                  <i style="--h:46%"></i><i style="--h:55%"></i><i style="--h:49%"></i><i style="--h:66%"></i><i style="--h:74%"></i><i style="--h:92%"></i><i style="--h:34%"></i>
+                  <i style="--h:50%"></i><i style="--h:58%"></i><i style="--h:63%"></i><i style="--h:69%"></i><i style="--h:81%"></i><i style="--h:100%"></i><i style="--h:41%"></i>
+                  <i style="--h:57%"></i><i style="--h:62%"></i><i style="--h:68%"></i><i style="--h:77%" class="hoy"></i>
+                </div>
+              </div>
+              <div class="reporte__top">
+                <small>Productos más vendidos</small>
+                <ol>
+                  <li><span>Jean clásico</span><i style="--w:100%"></i><b>46</b></li>
+                  <li><span>Camiseta básica</span><i style="--w:85%"></i><b>39</b></li>
+                  <li><span>Chaqueta denim</span><i style="--w:46%"></i><b>21</b></li>
+                  <li><span>Gorra bordada</span><i style="--w:39%"></i><b>18</b></li>
+                  <li><span>Medias x3</span><i style="--w:33%"></i><b>15</b></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <article class="card reveal">
-          <svg class="card__spark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c0 6-3 10-13 13 10 3 13 7 13 13 0-6 3-10 13-13-10-3-13-7-13-13z"/></svg>
-          <h3>Agentes y chatbots con IA</h3>
-          <p>Atención al cliente y ventas que responden al instante, los siete días de la semana.</p>
-        </article>
+        <p class="chip" style="right:-3%;top:-4%;--d:-1s"><span class="chip__ico chip__ico--exito"><svg class="ico"><use href="#i-sube"/></svg></span>+18 % frente al mes anterior</p>
+        <p class="chip" style="left:-4%;top:58%;--d:-3s"><span class="chip__ico chip__ico--alerta"><svg class="ico"><use href="#i-alerta"/></svg></span>3 productos bajo el mínimo</p>
+        <p class="chip" style="right:8%;bottom:-5%;--d:-5s"><span class="chip__ico chip__ico--petroleo"><svg class="ico"><use href="#i-check"/></svg></span>Factura FE-1042 aceptada</p>
+      </div>
+    </div>
+  </section>
 
-        <article class="card reveal">
-          <svg class="card__spark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c0 6-3 10-13 13 10 3 13 7 13 13 0-6 3-10 13-13-10-3-13-7-13-13z"/></svg>
-          <h3>Integraciones a medida</h3>
-          <p>Unimos tu CRM, hojas de cálculo, WhatsApp y correo en un solo flujo que funciona sin fricción.</p>
-        </article>
+  <!-- ===== Asistente ===== -->
+  <section class="bloque bloque--pegado">
+    <div class="contenedor">
+      <div class="bloque__cabeza revela">
+        <p class="etiqueta">Asistente de WhatsApp</p>
+        <h2 class="titulo titulo--2">Tu WhatsApp responde,<br /> aunque estés <em>atendiendo</em></h2>
+        <p class="bloque__bajada">Le enseñas tu negocio una vez. El asistente contesta con tu catálogo real, precios y existencias, y te pasa la conversación cuando hace falta una persona.</p>
+      </div>
 
-        <article class="card reveal">
-          <svg class="card__spark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c0 6-3 10-13 13 10 3 13 7 13 13 0-6 3-10 13-13-10-3-13-7-13-13z"/></svg>
-          <h3>Reportes y datos automáticos</h3>
-          <p>Información clara y actualizada, lista cuando la necesitas, sin que nadie tenga que armarla a mano.</p>
-        </article>
+      <div class="vitrina vitrina--angosta bloque__vitrina revela">
+        <div class="app" role="img" aria-label="Bandeja de WhatsApp en OptiLabs: el asistente le confirma a Laura que quedan 4 jeans en talla 10.">
+          <div class="app__barra"><span></span><span></span><span></span><p>tienda-demo · WhatsApp</p></div>
+          <div class="bandeja">
+            <div class="bandeja__lista">
+              <p class="app__titulo">Conversaciones</p>
+              <div class="conversacion activa"><b>Laura Gómez</b><span>Perfecto, le aviso al equipo…</span><em>La atiende el asistente</em></div>
+              <div class="conversacion"><b>Andrés Ruiz</b><span>Muchas gracias</span><em>La atiende el asistente</em></div>
+              <div class="conversacion"><b>Marcela Pineda</b><span>¿Me comunicas con alguien?</span><em class="persona">Espera a una persona</em></div>
+              <div class="conversacion"><b>Jorge Castaño</b><span>¿Cuánto vale la chaqueta?</span><em>La atiende el asistente</em></div>
+            </div>
+            <div class="chat">
+              <div class="chat__cabeza"><b>Laura Gómez</b><span>+57 310 ··· 4821</span></div>
+              <div class="chat__mensajes">
+                <p class="globo globo--cliente">Hola, ¿tienen el jean clásico en talla 10?<small>10:41</small></p>
+                <p class="globo">Hola, Laura. Sí, nos quedan 4 en talla 10 y cuesta $89.900. ¿Quieres que te lo tengamos listo?<small>10:41 · Asistente</small></p>
+                <p class="globo globo--cliente">Sí, paso a las 5<small>10:42</small></p>
+                <p class="globo">Perfecto, le aviso al equipo para que te lo tenga listo. Abrimos hasta las 7 p. m.<small>10:42 · Asistente</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="chip" style="left:-6%;top:30%;--d:-2s"><span class="chip__ico chip__ico--petroleo"><svg class="ico"><use href="#i-buscar"/></svg></span>Consultó el catálogo: 4 en talla 10</p>
+        <p class="chip" style="right:-5%;top:12%;--d:-4s"><span class="chip__ico chip__ico--exito"><svg class="ico"><use href="#i-personas"/></svg></span>Anotó a Laura en tu CRM</p>
+        <p class="chip" style="right:4%;bottom:-5%;--d:0s"><span class="chip__ico"><svg class="ico"><use href="#i-mensaje"/></svg></span>Te pasa el chat cuando hace falta</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Hecho en Colombia ===== -->
+  <section class="colombia">
+    <div class="contenedor colombia__escena">
+      <div class="colombia__texto revela">
+        <p class="etiqueta">Hecho en Colombia</p>
+        <h2 class="titulo titulo--2">Pensado para cómo<br /> se trabaja <em>aquí</em></h2>
+        <p class="bloque__bajada">Pesos, IVA incluido, Nequi, fiados, festivos y la DIAN. Lo que otros sistemas te hacen ajustar, aquí ya viene listo.</p>
+        <a href="https://wa.me/573022987677?text=Hola%2C%20quiero%20agendar%20una%20demo%20de%20OptiLabs%20para%20mi%20negocio." class="boton boton--negro colombia__boton" target="_blank" rel="noopener">Agenda una demo</a>
+      </div>
+      <ul class="colombia__sellos">
+        <li class="sello" style="left:4%;top:10%;--d:0s">Nequi</li>
+        <li class="sello" style="left:0%;top:48%;--d:-3s">Factura electrónica DIAN</li>
+        <li class="sello" style="left:12%;top:82%;--d:-1.5s">Fiados y abonos</li>
+        <li class="sello" style="right:6%;top:6%;--d:-4s">IVA incluido</li>
+        <li class="sello" style="right:0%;top:40%;--d:-2s">Festivos y recargos</li>
+        <li class="sello" style="right:10%;top:78%;--d:-5s">Ley 1581 de datos</li>
+        <li class="sello" style="left:30%;top:-2%;--d:-2.5s">Lector de códigos</li>
+        <li class="sello" style="right:28%;top:94%;--d:-3.5s">WhatsApp</li>
+      </ul>
+    </div>
+    <div class="horizonte" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== Zona oscura ===== -->
+  <div class="oscuro" data-tema="oscuro">
+
+    <section class="bloque bloque--arriba" id="como-funciona">
+      <div class="contenedor">
+        <div class="bloque__cabeza revela">
+          <p class="etiqueta etiqueta--oscura">Cómo funciona</p>
+          <h2 class="titulo titulo--2">Del cuaderno a un<br /> negocio <em>en orden</em></h2>
+          <p class="bloque__bajada">Cuatro pasos, y te acompañamos en cada uno.</p>
+        </div>
+
+        <ol class="pasos">
+          <li class="paso revela">
+            <span class="paso__num">1</span>
+            <div class="paso__demo">
+              <div class="mini">
+                <p class="mini__titulo">Módulos</p>
+                <p class="mini__fila">Caja<i class="interruptor encendido"></i></p>
+                <p class="mini__fila">Inventario<i class="interruptor encendido"></i></p>
+                <p class="mini__fila">Factura electrónica<i class="interruptor encendido"></i></p>
+                <p class="mini__fila">Cartera<i class="interruptor"></i></p>
+                <p class="mini__fila">Asistente de WhatsApp<i class="interruptor encendido"></i></p>
+              </div>
+            </div>
+            <h3>Elige tus módulos</h3>
+            <p>Enciende lo que vas a usar: caja, inventario, facturación, fiados… Puedes sumar o apagar cualquiera cuando quieras.</p>
+          </li>
+          <li class="paso revela">
+            <span class="paso__num">2</span>
+            <div class="paso__demo">
+              <div class="mini">
+                <p class="mini__titulo">productos.csv <span>412 filas</span></p>
+                <p class="mini__fila"><span><i class="punto punto--exito"></i>Se crean</span><b>398</b></p>
+                <p class="mini__fila"><span><i class="punto"></i>Se omiten (ya existen)</span><b>11</b></p>
+                <p class="mini__fila"><span><i class="punto punto--alerta"></i>Con error</span><b>3</b></p>
+                <p class="mini__boton">Cargar 398 productos</p>
+              </div>
+            </div>
+            <h3>Trae tus datos</h3>
+            <p>Sube tus productos y clientes desde Excel. Revisas fila por fila antes de cargar, y si algo sale mal, se deshace.</p>
+          </li>
+          <li class="paso revela">
+            <span class="paso__num">3</span>
+            <div class="paso__demo">
+              <div class="mini">
+                <p class="mini__titulo">Venta #1042 <span>Nequi</span></p>
+                <p class="mini__monto">$149.700</p>
+                <p class="mini__fila"><span>Inventario</span><b class="ok">Descontado</b></p>
+                <p class="mini__fila"><span>Factura FE-1042</span><b class="ok">Aceptada</b></p>
+                <p class="mini__fila"><span>Laura Gómez</span><b class="ok">Pasó a Cliente</b></p>
+              </div>
+            </div>
+            <h3>Vende y factura</h3>
+            <p>Cobras en efectivo, Nequi, tarjeta o fiado. La factura, el inventario y el cliente se actualizan solos con cada venta.</p>
+          </li>
+          <li class="paso revela">
+            <span class="paso__num">4</span>
+            <div class="paso__demo">
+              <div class="mini">
+                <p class="mini__titulo">Este mes <span class="sube">+18 %</span></p>
+                <p class="mini__monto">$18,4 M</p>
+                <div class="barras barras--mini">
+                  <i style="--h:40%"></i><i style="--h:55%"></i><i style="--h:48%"></i><i style="--h:66%"></i><i style="--h:72%"></i><i style="--h:90%"></i><i style="--h:58%"></i><i style="--h:100%" class="hoy"></i>
+                </div>
+              </div>
+            </div>
+            <h3>Mide y crece</h3>
+            <p>Ventas, productos más vendidos y quién te debe, por día o por mes y comparado con el periodo anterior.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section class="section" id="beneficios">
-      <p class="eyebrow rail-mark">Por qué OptiLabs</p>
-      <h2 class="section__title">Resultados que se<br />sienten rápido.</h2>
+    <section class="bloque" id="modulos">
+      <div class="contenedor">
+        <div class="bloque__cabeza revela">
+          <p class="etiqueta etiqueta--oscura">Módulos</p>
+          <h2 class="titulo titulo--2">Todo lo que tu negocio<br /> usa, <em>conectado</em></h2>
+          <p class="bloque__bajada">Cuando vendes, el inventario, la factura, las comisiones y tu CRM se actualizan solos. Nadie copia datos de un lado a otro.</p>
+        </div>
 
-      <div class="benefits">
-        <div class="benefit reveal">
-          <h3>Ahorra tiempo</h3>
-          <p>Elimina tareas manuales que le roban horas a tu equipo cada semana.</p>
-        </div>
-        <div class="benefit reveal">
-          <h3>Optimiza recursos</h3>
-          <p>Haz más con el mismo equipo, sin contratar para tareas repetitivas.</p>
-        </div>
-        <div class="benefit reveal">
-          <h3>Mejora tus procesos</h3>
-          <p>Menos errores humanos y más consistencia en cada paso del camino.</p>
-        </div>
-        <div class="benefit reveal">
-          <h3>Escala sin fricción</h3>
-          <p>Tu operación crece sin que el caos crezca con ella.</p>
+        <div class="modulos">
+          <article class="modulo modulo--ancho revela">
+            <span class="modulo__ico"><svg class="ico"><use href="#i-recibo"/></svg></span>
+            <h3>Caja</h3>
+            <p>Cobra con lector de códigos, divide el pago entre varios medios y cuadra el turno al cerrar.</p>
+            <div class="modulo__pildoras"><span>Efectivo</span><span>Nequi</span><span>Tarjeta</span><span>Transferencia</span><span>Fiado</span></div>
+          </article>
+          <article class="modulo revela">
+            <span class="modulo__ico"><svg class="ico"><use href="#i-caja"/></svg></span>
+            <h3>Inventario</h3>
+            <p>Existencias y kárdex por producto. Te avisa antes de que algo se agote.</p>
+          </article>
+          <article class="modulo revela">
+            <span class="modulo__ico"><svg class="ico"><use href="#i-documento"/></svg></span>
+            <h3>Factura electrónica</h3>
+            <p>Cada venta genera su factura con tu resolución DIAN; si la anulas, sale la nota crédito.</p>
+          </article>
+          <article class="modulo revela">
+            <span class="modulo__ico"><svg class="ico"><use href="#i-billetera"/></svg></span>
+            <h3>Cartera</h3>
+            <p>Fiados con cupo y plazo, abonos con recibo y recordatorio por WhatsApp.</p>
+          </article>
+          <article class="modulo revela">
+            <span class="modulo__ico"><svg class="ico"><use href="#i-personas"/></svg></span>
+            <h3>Clientes y CRM</h3>
+            <p>Un embudo que se mueve solo con cada compra, con tareas de seguimiento.</p>
+          </article>
+          <article class="modulo modulo--ancho revela">
+            <span class="modulo__ico"><svg class="ico"><use href="#i-mensaje"/></svg></span>
+            <h3>Asistente de WhatsApp</h3>
+            <p>Responde con tu catálogo real, anota a cada cliente y te pasa la conversación cuando hace falta una persona.</p>
+            <p class="modulo__globo">¿Tienen el jean clásico en talla 10?</p>
+          </article>
+          <article class="modulo revela">
+            <span class="modulo__ico"><svg class="ico"><use href="#i-tienda"/></svg></span>
+            <h3>Tienda en línea</h3>
+            <p>Tu catálogo publicado en tu propia dirección, con los pedidos en tu bandeja.</p>
+          </article>
+          <article class="modulo revela">
+            <span class="modulo__ico"><svg class="ico"><use href="#i-porcentaje"/></svg></span>
+            <h3>Comisiones</h3>
+            <p>Códigos de referido, porcentaje por producto y liquidaciones listas para pagar.</p>
+          </article>
+          <article class="modulo revela">
+            <span class="modulo__ico"><svg class="ico"><use href="#i-reloj"/></svg></span>
+            <h3>Personal y turnos</h3>
+            <p>Turnos, horas extra, recargos y festivos según la ley colombiana.</p>
+          </article>
+          <article class="modulo revela">
+            <span class="modulo__ico"><svg class="ico"><use href="#i-barras"/></svg></span>
+            <h3>Reportes</h3>
+            <p>Ventas, ticket promedio y más vendidos, comparados con el periodo anterior.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="proceso">
-      <p class="eyebrow rail-mark">Cómo trabajamos</p>
-      <h2 class="section__title">De la idea al<br />sistema funcionando.</h2>
+    <section class="bloque" id="precio">
+      <div class="contenedor">
+        <div class="bloque__cabeza revela">
+          <p class="etiqueta etiqueta--oscura">Precio</p>
+          <h2 class="titulo titulo--2">Un plan.<br /> Todo <em>incluido</em></h2>
+          <p class="bloque__bajada">Sin paquetes ni sorpresas: pagas una mensualidad y usas los módulos que tu negocio necesite.</p>
+        </div>
 
-      <ol class="steps">
-        <li class="step reveal">
-          <span class="step__num">01</span>
-          <h3>Diagnóstico</h3>
-          <p>Revisamos tus procesos actuales y detectamos dónde la automatización tiene más impacto.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step__num">02</span>
-          <h3>Diseño</h3>
-          <p>Diseñamos el flujo de automatización a la medida de tu negocio, no una plantilla genérica.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step__num">03</span>
-          <h3>Implementación</h3>
-          <p>Conectamos tus herramientas y ponemos todo a funcionar de principio a fin.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step__num">04</span>
-          <h3>Acompañamiento</h3>
-          <p>Ajustamos y damos soporte para que el sistema siga funcionando sin fricción.</p>
-        </li>
-      </ol>
+        <div class="precio">
+          <div class="precio__tarjeta revela">
+            <p class="precio__nombre">Plan OptiLabs</p>
+            <p class="precio__monto">$700.000 <small>al mes</small></p>
+            <ul class="precio__lista">
+              <li><svg class="ico"><use href="#i-check"/></svg>Los diez módulos incluidos</li>
+              <li><svg class="ico"><use href="#i-check"/></svg>14 días de prueba con todo activo</li>
+              <li><svg class="ico"><use href="#i-check"/></svg>Te ayudamos a configurar y a subir tus datos</li>
+              <li><svg class="ico"><use href="#i-check"/></svg>Tu equipo entra con su propio usuario y rol</li>
+            </ul>
+            <a href="https://wa.me/573022987677?text=Hola%2C%20quiero%20agendar%20una%20demo%20de%20OptiLabs%20para%20mi%20negocio." class="boton boton--petroleo" target="_blank" rel="noopener">Empieza tu prueba</a>
+          </div>
+          <div class="precio__detalle revela">
+            <p class="precio__nombre">Cómo pagas</p>
+            <dl>
+              <div><dt>Cada mes, desde la plataforma</dt><dd>Con PSE, Nequi, tarjeta o Botón Bancolombia. Cada pago suma un mes.</dd></div>
+              <div><dt>Si se te pasa la fecha</dt><dd>Tienes 7 días de gracia con todo funcionando.</dd></div>
+              <div><dt>Tus datos se quedan</dt><dd>Aunque la cuenta pase a solo lectura, nada se borra.</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <section class="bloque" id="preguntas">
+      <div class="contenedor">
+        <div class="preguntas__cabeza revela">
+          <h2 class="titulo titulo--2">¿Tienes dudas?<br /> Aquí hay <em>respuestas</em></h2>
+          <p>Si te queda alguna, hablemos.<br /><a href="https://wa.me/573022987677?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20OptiLabs." target="_blank" rel="noopener">Escríbenos por WhatsApp <svg class="ico"><use href="#i-flecha"/></svg></a></p>
+        </div>
+
+        <div class="preguntas revela">
+          <details class="pregunta">
+            <summary>¿Necesito saber de sistemas para usar OptiLabs?<svg class="ico pregunta__mas"><use href="#i-mas"/></svg></summary>
+            <p>No. Si sabes cobrar, sabes usar la caja. Te ayudamos a configurar tu negocio y a subir tus productos, y cada pantalla dice lo que hace en palabras simples.</p>
+          </details>
+          <details class="pregunta">
+            <summary>¿Tengo que instalar algo?<svg class="ico pregunta__mas"><use href="#i-mas"/></svg></summary>
+            <p>No. Funciona en el navegador del computador, la tablet o el celular. Si tienes lector de códigos de barras, lo conectas y la caja lo reconoce.</p>
+          </details>
+          <details class="pregunta">
+            <summary>¿Puedo traer mis productos y clientes desde Excel?<svg class="ico pregunta__mas"><use href="#i-mas"/></svg></summary>
+            <p>Sí. Guardas tu hoja como CSV y la subes. Antes de cargar ves fila por fila qué se crea, qué se omite y qué tiene error; si algo sale mal, la importación se deshace.</p>
+          </details>
+          <details class="pregunta">
+            <summary>¿Tengo que usar todos los módulos?<svg class="ico pregunta__mas"><use href="#i-mas"/></svg></summary>
+            <p>No. El plan los incluye todos, pero tú decides cuáles encender. Puedes empezar solo con la caja y sumar inventario o facturación cuando quieras.</p>
+          </details>
+          <details class="pregunta">
+            <summary>¿Qué hace exactamente el asistente de WhatsApp?<svg class="ico pregunta__mas"><use href="#i-mas"/></svg></summary>
+            <p>Responde los mensajes que llegan al WhatsApp de tu negocio con lo que le enseñaste y con tu catálogo real: precios, existencias y estado de los pedidos. Cuando no sabe algo o el cliente pide hablar con alguien, te pasa la conversación.</p>
+          </details>
+          <details class="pregunta">
+            <summary>¿Puedo probar antes de pagar?<svg class="ico pregunta__mas"><use href="#i-mas"/></svg></summary>
+            <p>Sí. Tienes 14 días de prueba con todo incluido. Después pagas la mensualidad desde la misma plataforma.</p>
+          </details>
+          <details class="pregunta">
+            <summary>¿Qué pasa si se me pasa la fecha de pago?<svg class="ico pregunta__mas"><use href="#i-mas"/></svg></summary>
+            <p>Tienes 7 días de gracia con todo funcionando. Luego la cuenta queda en solo lectura hasta que pagues: puedes consultar, pero no registrar ventas. Tus datos no se borran.</p>
+          </details>
+          <details class="pregunta">
+            <summary>¿Quién ve la información de mi negocio?<svg class="ico pregunta__mas"><use href="#i-mas"/></svg></summary>
+            <p>Solo tu equipo, con el rol que le des: administrador, vendedor, contador o solo lectura. Cada empresa está separada de las demás, y los datos de tus clientes se guardan con su autorización, como pide la Ley 1581.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cierre">
+      <div class="contenedor revela">
+        <p class="etiqueta etiqueta--oscura"><span class="etiqueta__punto"></span>14 días de prueba</p>
+        <h2 class="titulo titulo--2">Tu negocio, en orden<br /> desde <em>esta semana</em></h2>
+        <div class="hero__acciones">
+          <a href="https://wa.me/573022987677?text=Hola%2C%20quiero%20agendar%20una%20demo%20de%20OptiLabs%20para%20mi%20negocio." class="boton boton--blanco" target="_blank" rel="noopener">Agenda una demo</a>
+          <a href="mailto:optilabs.col@gmail.com" class="boton boton--borde">Escríbenos un correo</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pie">
+      <div class="contenedor pie__arriba">
+        <div class="pie__marca">
+          <a href="#inicio" class="nav__marca"><img src="Logo-OptiLabs.jpg" alt="" width="30" height="30" /><span>OptiLabs</span></a>
+          <p>El sistema que pone tu negocio en orden.</p>
+        </div>
+        <nav class="pie__columna" aria-label="Producto">
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#modulos">Módulos</a>
+          <a href="#precio">Precio</a>
+          <a href="#preguntas">Preguntas</a>
+        </nav>
+        <div class="pie__columna">
+          <a href="https://wa.me/573022987677?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20OptiLabs." target="_blank" rel="noopener">+57 302 298 7677</a>
+          <a href="mailto:optilabs.col@gmail.com">optilabs.col@gmail.com</a>
+          <a href="https://optilabs-plataforma.vercel.app/login">Entrar a mi cuenta</a>
+        </div>
+        <div class="pie__columna">
+          <a href="https://www.instagram.com/optilabs.col/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@optilabs4" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+      <div class="contenedor pie__abajo">
+        <span>© <span id="anio">2026</span> OptiLabs. Todos los derechos reservados.</span>
+        <span>Hecho en Colombia</span>
+      </div>
+    </footer>
+
   </div>
-
-  <section class="cta-band reveal">
-    <svg class="cta-band__spark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c0 6-3 10-13 13 10 3 13 7 13 13 0-6 3-10 13-13-10-3-13-7-13-13z"/></svg>
-    <h2>No esperes a que tu<br />competencia avance para empezar.</h2>
-    <p>Agenda una conversación de 20 minutos, sin costo, y descubre qué puedes automatizar hoy.</p>
-    <a href="https://wa.me/573022987677?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20automatizaci%C3%B3n%20con%20IA.%20Me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." class="btn btn--dark" target="_blank" rel="noopener">
-      <span>Agendar ahora</span>
-    </a>
-  </section>
-
 </main>
-
-<footer class="footer" id="contacto">
-  <div class="footer__top">
-    <div class="footer__brand">
-      <img src="Logo-OptiLabs.jpg" alt="" class="footer__logo" />
-      <div>
-        <p class="footer__name">OptiLabs</p>
-        <p class="footer__tag">Inteligencia Artificial y automatización para negocios que no quieren esperar.</p>
-      </div>
-    </div>
-
-    <div class="footer__contact">
-      <p class="eyebrow eyebrow--light">Contacto</p>
-      <a href="mailto:optilabs.col@gmail.com">optilabs.col@gmail.com</a>
-      <a href="https://wa.me/573022987677?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20automatizaci%C3%B3n%20con%20IA.%20Me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener">+57 302 298 7677</a>
-    </div>
-  </div>
-
-  <div class="footer__bottom">
-    <span>© <span id="year"></span> OptiLabs. Todos los derechos reservados.</span>
-  </div>
-</footer>
 
 <script src="script.js"></script>
 </body>
